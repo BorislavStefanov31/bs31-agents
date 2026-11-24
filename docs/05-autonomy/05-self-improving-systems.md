@@ -196,7 +196,7 @@ The third question is the important one. Rules written to compensate for a weake
 |---|---|---|---|---|
 | IMP-1 | Add an origin (date and incident, one clause) to every new rule in instruction files and checklists | Project, Team | S | Annotate the five most recent rules in your instruction file with where they came from |
 | IMP-2 | Before adding a rule, choose its home from the table: instruction file, scoped rule, skill, hook or script, personal memory, or nowhere | Project, Workspace | S | Take your last three corrections and write down which home each belongs in |
-| IMP-3 | Turn any instruction you have repeated three times into a hook, script, lint rule or test | Project | S | Find one "always run X after Y" rule and write the hook that runs X |
+| IMP-3 | Turn any correction you have repeated three times into a hook, script, lint rule or test (for a gate on commits or merges, see VER-7 and VER-11) | Project | S | Find one "always run X after Y" rule and write the hook that runs X |
 | IMP-4 | Once a month, search a month of session transcripts and review comments for repeated corrections, with file and line for each finding | Workspace, Team | M | Ask your agent to search this project's past sessions for your three most typed corrections and cite each match |
 | IMP-5 | Keep 10 to 20 replayable cases per shared prompt, skill or role and run each several times before and after any change | Project, Team | M | Save five real inputs with the expected outcome for your most used skill |
 | IMP-6 | Keep a few held-out cases outside the repository, deny the changing agent that path, and report results as bare pass counts | Project, Team | M | Write three cases by hand in a folder outside the repo and add a deny rule for it |
