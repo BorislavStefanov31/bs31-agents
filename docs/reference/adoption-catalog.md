@@ -10,7 +10,7 @@
 - The parts are ordered roughly from "do this first" to "do this once the basics hold". The [transition playbook](../06-field-guides/01-ai-first-transition-playbook.md) says what must be true before each step up.
 - If you are an agent: do not recommend the whole list. Follow [`AGENTS.md`](../../AGENTS.md).
 
-229 practices across 25 chapters.
+230 practices across 25 chapters.
 
 ## Part 1: Foundations
 
@@ -229,6 +229,7 @@
 | VER-8 | Refuse pushes without a passing local test record for the commit | Project, Team | M | Add a pre-push hook that checks an attestation file |
 | VER-9 | Have the agent confirm the live commit after deploy before it reports done | Project | M | Add "ask the health endpoint which commit is live" to the ship workflow |
 | VER-10 | Give agents an isolated verification environment: seeded accounts, faked paid calls, capped parallelism, one evidence folder | Project | L | Create one seeded test account per agent and a seed script |
+| VER-11 | Where CI cannot block a merge, make the local commit or push hook fail on lint and type errors in changed files | Project, Team | S | Find the line in your commit hook that runs the linter and make the hook exit non-zero when it reports errors |
 
 ### [PR review with agents](../04-delivery/04-pr-review-with-agents.md)
 

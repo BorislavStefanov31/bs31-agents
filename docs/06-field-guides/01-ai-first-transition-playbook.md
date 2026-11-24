@@ -56,11 +56,12 @@ The agent starts every session knowing nothing about your project. Fix that once
 
 - A committed instruction file (`AGENTS.md`, or `CLAUDE.md` for Claude Code) written as an **index**: how to build and test, a map of the architecture, the gotchas that have burned people, and pointers to deeper files. Not an encyclopedia.
 - The few rules people repeat in review, written down where the agent will load them.
+- Decision records for the choices people keep re-arguing: one short file per decision with its reason, so an agent does not undo it and a later reversal has something to check against. They add context and no output, which makes them safe at any rung.
 - A personal habit: state what "done" looks like before the work starts.
 
 **Exit check:** a fresh session, asked "how do I run the tests for module X and what should I know before changing it?", answers correctly without searching the whole repo.
 
-Read: [instruction files and rules](../02-workspace/01-instruction-files-and-rules.md), [context engineering](../01-foundations/02-context-engineering.md), [working habits](03-working-habits-and-anti-patterns.md).
+Read: [instruction files and rules](../02-workspace/01-instruction-files-and-rules.md), [knowledge and memory](../02-workspace/03-knowledge-and-memory.md) for decision records, [context engineering](../01-foundations/02-context-engineering.md), [working habits](03-working-habits-and-anti-patterns.md).
 
 ### Rung 2: deterministic gates
 
@@ -82,7 +83,7 @@ Now turn what individuals do well into something the whole team runs the same wa
 - Skills for the tasks you repeat: plan a feature, implement a story, write a test plan, cut a release note.
 - Path-scoped rules for the modules that attract the most review comments, each with the reason it exists.
 - Plans as files: a non-trivial change gets a written plan, confirmed by a person, **before** code. The plan names the slices and how big each may be.
-- Decision records and a small team memory, so a reversal next month has something to check against.
+- A small team memory for domain knowledge the code cannot show, next to the decision records you started on rung 1.
 
 **Exit check:** two different people run the same skill on similar tasks and get PRs of the same shape. A new hire's first PR follows the conventions without being told them.
 

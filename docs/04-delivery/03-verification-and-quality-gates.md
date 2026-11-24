@@ -147,6 +147,7 @@ if ! grep -q "$head pass" .attest/latest 2>/dev/null; then
 fi
 ```
 
+- **When CI cannot block the merge.** Some teams cannot change their CI or lack branch protection. The gate you still own is the local hook: make the commit or push hook exit non-zero on lint and type errors in the changed files, install it from the project's setup script so everyone has it, and do not print the bypass flag in its error message. A hook can be skipped, so it is weaker than a merge gate, but it turns "lint never fails" into a refusal at the moment the mistake is made.
 - **House rules.** Checks specific to your repo: a ratchet on file length, a ban on banner comments, a registry of building blocks that must list code and docs for each entry. Agents will write these if you ask them to watch for recurring sloppiness.
 
 Three habits keep a gate healthy. **Promote repeated comments**: a review remark made twice becomes a lint rule or a test. **Prune**: agents write many tests, some of which only assert that a page renders what it renders, so a nightly pass that deletes weak tests keeps the suite fast and honest. **Keep it quick**: cache results so CI reuses what the agent already ran, and end with one aggregate check that passes only when all others do.
@@ -220,6 +221,7 @@ A scheduled pass over finished jobs closes the gap from the other side. It reads
 | VER-8 | Refuse pushes without a passing local test record for the commit | Project, Team | M | Add a pre-push hook that checks an attestation file |
 | VER-9 | Have the agent confirm the live commit after deploy before it reports done | Project | M | Add "ask the health endpoint which commit is live" to the ship workflow |
 | VER-10 | Give agents an isolated verification environment: seeded accounts, faked paid calls, capped parallelism, one evidence folder | Project | L | Create one seeded test account per agent and a seed script |
+| VER-11 | Where CI cannot block a merge, make the local commit or push hook fail on lint and type errors in changed files | Project, Team | S | Find the line in your commit hook that runs the linter and make the hook exit non-zero when it reports errors |
 
 ## Resources
 

@@ -16,7 +16,7 @@ This repository is a playbook, not a codebase. Someone has pointed you at it and
    - One short follow-up round is allowed if an answer changes which practices are relevant. Then stop asking.
    - If the user already gave this information in their message, do not ask for it again.
 3. **Read [`docs/reference/adoption-catalog.md`](docs/reference/adoption-catalog.md).** It lists every practice in the playbook in one table: ID, practice, where it applies, effort, first step, and the chapter that explains it.
-4. **Place them on the ladder.** [`docs/06-field-guides/01-ai-first-transition-playbook.md`](docs/06-field-guides/01-ai-first-transition-playbook.md) defines the rungs and what must be true before climbing each one. Recommend from the lowest rung that is not yet solid. Do not recommend autonomy to a project with no deterministic test gate.
+4. **Place them on the ladder.** [`docs/06-field-guides/01-ai-first-transition-playbook.md`](docs/06-field-guides/01-ai-first-transition-playbook.md) defines the rungs and what must be true before climbing each one. Recommend from the lowest rung that is not yet solid. Do not recommend autonomy to a project with no deterministic test gate. Practices that only add context and no output, such as tightening the instruction file or recording decisions (ADRs), are safe at any rung: when decisions are not written down, include that among your recommendations even if the gates come first.
 5. **Open only the chapters you need** for the practices you are about to recommend. Do not load the whole playbook into context.
 6. **Recommend at most five practices**, ordered by value for effort. For each one give:
    - the catalogue ID and the practice,
