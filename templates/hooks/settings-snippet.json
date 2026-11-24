@@ -1,0 +1,23 @@
+{
+  "_comment": [
+    "WHAT IT IS: the settings block that registers block-sensitive-edits.sh as a Claude Code PreToolUse hook.",
+    "HOW TO USE: merge the \"hooks\" key into .claude/settings.json (shared with the team through the repo) or ~/.claude/settings.json (all your projects). If the file already has a \"hooks\" key, add this entry to its \"PreToolUse\" array. Do not copy this \"_comment\" key: JSON has no comments, so the notes live here.",
+    "WHAT TO CHANGE: (1) the command path, if the script is not at .claude/hooks/ in the project; for a user-level hook point it at a path in your home folder such as ~/.claude/hooks/block-sensitive-edits.sh. (2) the matcher, if you want to guard more or fewer tools; it lists exact tool names separated by |. (3) the timeout, in seconds.",
+    "CHECK: run /hooks in a session to see that the hook is loaded, then ask the agent to edit .env and confirm it is refused.",
+    "VERIFIED AGAINST: the official hooks reference and hooks guide (code.claude.com/docs/en/hooks and /hooks-guide) as published on 2026-11-24, Claude Code 2.1.x. The shape is version-sensitive: re-check after an upgrade."
+  ],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-sensitive-edits.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

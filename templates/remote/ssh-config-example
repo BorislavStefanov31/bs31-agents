@@ -1,0 +1,62 @@
+# WHAT THIS IS
+#   Three SSH aliases for one always-on server, for ~/.ssh/config on the laptop. Each alias has
+#   its own key pair and its own job, so that the everyday login cannot change the system and
+#   the two root logins are hard to use by accident.
+#
+# WHAT TO CHANGE
+#   - my-server: the machine name you gave the server in the mesh VPN.
+#   - <tailnet>: your tailnet's DNS suffix. The full name is what the VPN's status command
+#     prints for the server. Replace the whole placeholder, angle brackets included.
+#   - PUBLIC_IP: the server's public IPv4 address. Use the address, not the provider's hostname.
+#   - agent: the unprivileged user on the server.
+#   - The three key paths. Create the pairs with: ssh-keygen -t ed25519 -f ~/.ssh/my-server-worker
+#   - Passphrases: decide per key. A passphrase with an SSH agent protects a copied key file,
+#     but scripts and a coding agent cannot use the key until you have unlocked it. A key
+#     without one works unattended, and whoever controls the laptop account controls the server.
+#
+# STATUS
+#   A starting point to review, not a turnkey installer. The aliases only describe the laptop
+#   side. The server must enforce the same split (see the notes at the end), and you should
+#   test that the wrong key on the wrong address is refused.
+
+# 1. Everyday work. Unprivileged user, reachable over the VPN only.
+Host my-server.<tailnet>.ts.net
+    User agent
+    IdentityFile ~/.ssh/my-server-worker
+    IdentitiesOnly yes
+
+# 2. Admin. Root over the VPN, for system changes only: packages, system units, the firewall,
+#    serving a preview.
+Host my-server-root
+    HostName my-server.<tailnet>.ts.net
+    User root
+    IdentityFile ~/.ssh/my-server-admin
+    IdentitiesOnly yes
+
+# 3. Break-glass. Root over the public IP. Use it only when the VPN is down.
+Host my-server-public
+    HostName PUBLIC_IP
+    User root
+    IdentityFile ~/.ssh/my-server-glass
+    IdentitiesOnly yes
+
+# SERVER SIDE (not part of this file; shown so that the split is enforced, not just named)
+#
+#   /etc/ssh/sshd_config.d/00-lockdown.conf
+#     PasswordAuthentication no
+#     KbdInteractiveAuthentication no
+#     PermitRootLogin prohibit-password
+#     AllowUsers root agent@100.64.0.0/10 agent@fd7a:115c:a1e0::/48
+#
+#   /root/.ssh/authorized_keys
+#     <break-glass public key>
+#     from="100.64.0.0/10,fd7a:115c:a1e0::/48" <admin public key>
+#
+#   100.64.0.0/10 and fd7a:115c:a1e0::/48 are the address ranges Tailscale documents for
+#   tailnet devices. Another mesh VPN uses other ranges.
+#
+# CHECKS (two of them must fail)
+#   ssh my-server-root 'echo ${SSH_CONNECTION%% *}'     prints a VPN address
+#   ssh -o HostName=PUBLIC_IP my-server-root true       Permission denied (publickey), exit 255
+#   ssh -o IdentitiesOnly=yes -i ~/.ssh/my-server-worker agent@PUBLIC_IP true     the same
+#   ssh my-server-public true                           exit 0: break-glass still works

@@ -1,0 +1,47 @@
+# WHAT THIS IS
+#   A systemd USER unit that keeps a coding agent's remote-control entry alive on a server.
+#   It starts a detached tmux session named "remote" and runs `claude remote-control` in it inside
+#   a restart loop, so that sessions can be started on this machine from a phone.
+#   Install as ~/.config/systemd/user/remote-control.service for the unprivileged worker user, then:
+#     systemctl --user daemon-reload && systemctl --user enable --now remote-control.service
+#   The worker needs lingering (as root: loginctl enable-linger agent), or the unit stops at
+#   logout and does not start at boot.
+#
+# WHAT TO CHANGE
+#   - my-project: a git checkout in the worker's home. Spawn mode "worktree" gives every session
+#     started from the phone its own git worktree of this repository, so it must be a repository.
+#     Use "--spawn same-dir" for a plain folder.
+#   - my-server: the name shown in the app, and the prefix of auto-named sessions.
+#   - PATH must contain the folder where the agent CLI is installed.
+#   - The pause in the loop and RestartSec are examples. Any pause long enough for the old
+#     process to finish shutting down will do.
+#   - Flags are version-sensitive (written against Claude Code as of late 2026). Check
+#     `claude remote-control --help` on your machine before you enable the unit.
+#
+# STATUS
+#   A starting point to review, not a turnkey installer. The harness must be logged in and the
+#   folder trusted once, interactively, before this unit can connect.
+#
+# WHY THE LOOP
+#   systemd watches tmux, not the agent process. Without the loop, a remote-control process
+#   that exits leaves an empty, "healthy" unit. The pause also covers a restart in which the
+#   new process would start, and exit, while the old one is still shutting down.
+#   The loop does not help when the process keeps running with a dead link. That is the
+#   watchdog's job (link-watchdog.sh in this folder).
+
+[Unit]
+Description=Coding agent remote control for my-project (tmux session remote)
+After=network-online.target
+
+[Service]
+Type=forking
+WorkingDirectory=%h/my-project
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment=CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX=my-server
+ExecStart=/usr/bin/tmux new-session -d -s remote -c %h/my-project "while true; do claude remote-control --name my-server --remote-control-session-name-prefix my-server --spawn worktree; echo \"remote-control exited ($?), restarting in 15s\"; sleep 15; done"
+ExecStop=-/usr/bin/tmux kill-session -t remote
+Restart=on-failure
+RestartSec=20
+
+[Install]
+WantedBy=default.target
