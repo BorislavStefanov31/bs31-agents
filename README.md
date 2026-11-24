@@ -33,9 +33,9 @@ Open a session in **your** project (or anywhere, for a workspace audit) and past
 Short form (the full version, with follow-ups, is in [`prompts/audit-my-project.md`](prompts/audit-my-project.md)):
 
 ```text
-I want to know which practices from the Agent Playbook would improve
+I want to know which practices from the BS31-Agents playbook would improve
 this project. The playbook is at
-https://github.com/BorislavStefanov31/bs-agent-playbook
+https://github.com/BorislavStefanov31/bs31-agents
 If it is not cloned on this machine, clone it into a temporary folder.
 
 1. Read the playbook's AGENTS.md and follow it. Inspect this repository
@@ -63,8 +63,8 @@ Short form (full version in [`prompts/audit-my-workspace.md`](prompts/audit-my-w
 
 ```text
 I want to improve my personal setup for working with coding agents, using the
-Agent Playbook at
-https://github.com/BorislavStefanov31/bs-agent-playbook
+BS31-Agents playbook at
+https://github.com/BorislavStefanov31/bs31-agents
 If it is not cloned on this machine, clone it into a temporary folder.
 
 1. Read the playbook's AGENTS.md and follow it. Inspect my setup read-only: my

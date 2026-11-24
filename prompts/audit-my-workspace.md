@@ -10,8 +10,8 @@ The audit is read-only. Nothing is changed until you ask.
 
 ```text
 I want to improve my personal setup for working with coding agents, using the
-Agent Playbook at
-https://github.com/BorislavStefanov31/bs-agent-playbook
+BS31-Agents playbook at
+https://github.com/BorislavStefanov31/bs31-agents
 If it is not already cloned on this machine, clone it into a temporary folder and
 read it from there.
 

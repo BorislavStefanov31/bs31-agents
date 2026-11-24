@@ -9,9 +9,9 @@ The audit is read-only. Nothing is changed until you ask.
 ## The prompt
 
 ```text
-I want to know which practices from the Agent Playbook would improve
+I want to know which practices from the BS31-Agents playbook would improve
 this project. The playbook is at
-https://github.com/BorislavStefanov31/bs-agent-playbook
+https://github.com/BorislavStefanov31/bs31-agents
 If it is not already cloned on this machine, clone it into a temporary folder and
 read it from there.
 

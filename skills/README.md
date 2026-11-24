@@ -9,11 +9,11 @@ They follow the Agent Skills folder format, so they work in Claude Code, Codex, 
 Copy the folders you want into your skills folder and start a new session.
 
 ```sh
-git clone https://github.com/BorislavStefanov31/bs-agent-playbook.git
+git clone https://github.com/BorislavStefanov31/bs31-agents.git
 # one project
-mkdir -p .claude/skills && cp -R bs-agent-playbook/skills/done-when .claude/skills/
+mkdir -p .claude/skills && cp -R bs31-agents/skills/done-when .claude/skills/
 # every project on this machine
-mkdir -p ~/.claude/skills && cp -R bs-agent-playbook/skills/done-when ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -R bs31-agents/skills/done-when ~/.claude/skills/
 ```
 
 Other harnesses use other folders (`.agents/skills/`, `.cursor/skills/`, `~/.codex/skills/`). The [`repo-setup`](repo-setup/SKILL.md) skill covers sharing one skills folder across several harnesses.
