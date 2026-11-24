@@ -1,4 +1,4 @@
-# The Agent Playbook
+# BS31-Agents
 
 Ideas, patterns and reference designs for making a codebase, a team and a personal workspace AI-first, without the slop.
 
