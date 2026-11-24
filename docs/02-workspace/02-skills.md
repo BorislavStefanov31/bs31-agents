@@ -209,9 +209,23 @@ A meta-skill helps a team stay consistent: one skill that holds your rules for f
 - **Read before you install.** A skill is instructions plus code that run with your permissions. Read `SKILL.md`, every script, and the `allowed-tools` line. Malicious skills that hide instructions from reviewers have been documented (see Resources). Treat an update like a dependency update.
 - **Then tailor it.** A public skill is a starting point. Cut what you do not need.
 
-## Ready-made skills
+## Worked examples: the skills in this repository
 
-This repository ships nineteen skills written to the rules in this chapter, each with a trigger description and most with a small checking script. Read a few as worked examples, or install them: see the [skills index](../../skills/README.md).
+The [`skills/`](../../skills/README.md) folder holds nineteen skills written to the rules in this chapter. You can install them, and you can read them as examples. Each row names the point from this chapter that the skill shows best.
+
+| What to look at | Skill | Why it is a good example |
+|---|---|---|
+| A description written as a trigger | [`shorten-safely`](../../skills/shorten-safely/SKILL.md) | The description lists the situations, quotes a request a user would type, and says what the skill is not for. |
+| A narrow skill with instructions only | [`latest-check`](../../skills/latest-check/SKILL.md) | One question, no script, no template. Not every skill needs code. |
+| A skill that ships a fill-in template | [`delegate-brief`](../../skills/delegate-brief/SKILL.md), [`repo-setup`](../../skills/repo-setup/SKILL.md) | The body stays short because the form lives in a separate file that loads only when needed. |
+| A script that checks what the agent should not judge by itself | [`findings-log`](../../skills/findings-log/SKILL.md), [`read-the-contract`](../../skills/read-the-contract/SKILL.md) | The instructions say what to do; the script decides whether it was done. |
+| A skill backed by a hook | [`done-when`](../../skills/done-when/SKILL.md) | It includes a settings snippet for a stop hook, so "do not stop until the check passes" is enforced and not only requested. |
+| A worked example file next to the instructions | [`tool-contract`](../../skills/tool-contract/SKILL.md) | A complete example contract shows the format better than a description of it. |
+| Skills that point to each other | [`unattended-batch`](../../skills/unattended-batch/SKILL.md), [`secret-scope`](../../skills/secret-scope/SKILL.md), [`hold-for-owner`](../../skills/hold-for-owner/SKILL.md) | Each works alone and names the next by relative path, as in [Chain skills](#chain-skills). |
+| A pair split by moment | [`delegate-brief`](../../skills/delegate-brief/SKILL.md), [`merge-results`](../../skills/merge-results/SKILL.md) | One applies before work goes out, the other when results come back. Two triggers, two skills. |
+| Stating what a script does not protect against | [`secret-scope`](../../skills/secret-scope/SKILL.md), [`link-check`](../../skills/link-check/SKILL.md) | A small script is honest about its limits in the `SKILL.md`. |
+
+All nineteen keep the body near 600 words and use only `name` and `description` in the frontmatter. The [skills index](../../skills/README.md) lists every one with the situation it applies to and how to install it.
 
 ## Common mistakes
 
