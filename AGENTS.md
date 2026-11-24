@@ -62,6 +62,7 @@ Use the map below to find the owning chapter, read it, and answer from it. Chapt
 | Day-to-day habits with an agent | `docs/06-field-guides/03-working-habits-and-anti-patterns.md` |
 | Short answers to common questions | `docs/06-field-guides/04-faq.md` |
 | A term you do not recognise | `docs/reference/glossary.md` |
+| Ready-made skills to install, with an index of when each applies | `skills/README.md` |
 | Starter files to copy | `templates/` |
 
 ## Editing this repository

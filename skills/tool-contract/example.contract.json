@@ -1,0 +1,38 @@
+{
+  "tool": "count_lines",
+  "description": "Counts the lines of one text file in the notes folder. Call it before reading a file, to decide whether to read it whole. Returns the file name, line count, size in bytes and first line. Does not return the file's content and does not read outside notes/.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "file": { "type": "string", "description": "File name inside notes/, for example week19.txt. No folders, no leading dash." }
+    },
+    "required": ["file"],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "file": { "type": "string" },
+      "lines": { "type": "integer" },
+      "bytes": { "type": "integer" },
+      "firstLine": { "type": "string" }
+    },
+    "required": ["file", "lines", "bytes", "firstLine"]
+  },
+  "maxResultBytes": 600,
+  "largeOutput": "The file itself is never returned: only its name (the reference), size and first line cut to 120 characters.",
+  "outsideEffects": false,
+  "validSample": { "file": "week19.txt" },
+  "errors": [
+    { "field": "file", "wrongCall": "a path that leaves notes/", "message": "file must be a plain name inside notes/; send the name only", "sample": { "file": "../secrets.txt" } },
+    { "field": "file", "wrongCall": "a value that looks like an option", "message": "file must be a plain name inside notes/; send the name only", "sample": { "file": "--files0-from=x" } },
+    { "field": "file", "wrongCall": "a file that does not exist", "message": "file was not found in notes/; list the folder first and send an existing name", "sample": { "file": "week99.txt" } },
+    { "field": null, "wrongCall": "wc takes longer than 5 seconds", "message": "counting timed out; retry once, then report the file as too large" }
+  ],
+  "answers": {
+    "resultUsedFor": "deciding whether to read the file whole or in parts",
+    "inputComesFrom": "a directory listing of notes/",
+    "likeliestWrongCall": "a full path instead of a file name",
+    "changesOutside": "no"
+  }
+}

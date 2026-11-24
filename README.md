@@ -20,6 +20,7 @@ It is a collection of ideas, patterns and reference designs: how to set up a wor
 | Introduce agents to an existing team without breaking things | [The AI-first transition playbook](docs/06-field-guides/01-ai-first-transition-playbook.md) |
 | See every practice at a glance | [Adoption catalogue](docs/reference/adoption-catalog.md) |
 | Run agents while your laptop is closed | [Blueprint: always-on remote setup](docs/06-field-guides/02-always-on-remote-setup-blueprint.md) |
+| Install ready-made skills | [`skills/`](skills/) |
 | Copy a starter file | [`templates/`](templates/) |
 | Get a short answer to a specific question | [FAQ](docs/06-field-guides/04-faq.md) |
 
@@ -167,6 +168,7 @@ Where the ideas meet practice.
 | [Adoption catalogue](docs/reference/adoption-catalog.md) | Every practice from every chapter in one table, with effort and first step. |
 | [Glossary](docs/reference/glossary.md) | The vocabulary, one line each. |
 | [Resources](docs/reference/resources.md) | Every external link the chapters recommend. |
+| [`skills/`](skills/) | Nineteen ready-to-use agent skills, most with a small checking script: finishing on a check, delegating, proving a change works, running unattended, and more. |
 | [`templates/`](templates/) | Starter files: instruction file, rule, skill, review skills, story and plan templates, hooks, remote-setup units. |
 | [`prompts/`](prompts/) | The two audit prompts in full, with follow-ups. |
 

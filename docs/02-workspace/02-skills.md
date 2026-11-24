@@ -209,6 +209,10 @@ A meta-skill helps a team stay consistent: one skill that holds your rules for f
 - **Read before you install.** A skill is instructions plus code that run with your permissions. Read `SKILL.md`, every script, and the `allowed-tools` line. Malicious skills that hide instructions from reviewers have been documented (see Resources). Treat an update like a dependency update.
 - **Then tailor it.** A public skill is a starting point. Cut what you do not need.
 
+## Ready-made skills
+
+This repository ships nineteen skills written to the rules in this chapter, each with a trigger description and most with a small checking script. Read a few as worked examples, or install them: see the [skills index](../../skills/README.md).
+
 ## Common mistakes
 
 - **A description that describes.** "Helps with releases" tells the model nothing about when. Write the trigger.
