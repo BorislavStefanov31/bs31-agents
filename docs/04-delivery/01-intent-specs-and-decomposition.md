@@ -42,7 +42,7 @@ Real requirements arrive as a voice memo, a screen recording, a PDF, a whiteboar
 | Video | Transcribe the audio and also sample frames, at least one per second | Second, plus the region of the frame |
 | PDF | Text and the rendered page; look for annotations and text that does not render | Page and region |
 | Image, whiteboard photo | Full size, including handwriting | Region |
-| Live page or board | Open it in a browser, screenshot it, note when you read it | URL and time read |
+| Live page or board | Load it, take a screenshot, record the time | URL and time read |
 | Chat, support tickets | Export with ids | Message or ticket id |
 
 ```yaml
@@ -173,13 +173,13 @@ An unmarked issue is a decision nobody made. Run triage over the backlog and eve
 | You find | Do |
 |---|---|
 | A shipped issue that already covers it | Close as duplicate, cite the issue |
-| An open issue asking the same thing | Add the request id to that issue's sources |
+| An open issue that already covers it | Attach the new request's id to the existing issue |
 | A request that breaks a spec rule | Close as contradicts-spec, cite the rule id. Open a compliant variant if one meets the need |
 | A request overtaken by events | Close as obsolete, cite what overtook it |
 | A request for no change ("do not change X under us") | Record it as a boundary on every issue near X. Any issue that changes X becomes needs-human |
 | Anything else | A new issue |
 
-**Mark.** Check the needs-human list first. An issue is `agent-ready` only if it fits a line of the autonomy policy **and** you can write its acceptance without asking anyone. In doubt, mark it `needs-human`: a wrong `agent-ready` ships, a wrong `needs-human` only waits.
+**Mark.** Check the needs-human list first. An issue is `agent-ready` only when the autonomy policy covers it **and** its acceptance check can be written from what is already known. When unsure, choose `needs-human`: the cost of that mistake is a delay, while the cost of the other is a wrong change in production.
 
 ```markdown
 ---
@@ -197,7 +197,7 @@ Allowed by AUTO-1 (additive field).
 
 A `needs-human` issue reads as a question a person can answer (the policy below says how).
 
-**Check with a script, not by eye.** Every request id appears in exactly one issue. Every open issue has exactly one mark. Every closed issue has a reason. Every `blocked-by` points at a key that exists.
+**Check with a script, not by eye.** Every request id appears in exactly one issue. Every open issue has exactly one mark. Every closed issue has a reason. No `blocked-by` refers to an issue that does not exist.
 
 **Poll again before you finish.** Requests keep arriving while you triage. A later request can withdraw an earlier one, or reveal that a customer relies on something an `agent-ready` issue changes, so re-check earlier marks.
 
@@ -249,7 +249,7 @@ how we take it back.
 | SPC-3 | State acceptance criteria as observable outcomes with at least one must-not case, and move how-constraints to a `Constraint: ... because ...` line | Project, Team | S | Take one open story and classify each criterion as outcome or prescription |
 | SPC-4 | Give product and design rules ids in a `specs/` folder so briefs and triage can cite them | Project | M | Write five invariants in `specs/product.md` as `PROD-1` to `PROD-5` |
 | SPC-5 | Keep short decision records with a "revisit if" line, written by the agent after you decide | Project | S | Ask your agent to record the last architectural choice you made in `specs/decisions/0001-*.md` |
-| SPC-6 | Add `specs/autonomy.md` listing what an agent may do alone, what needs a person and how to ask | Project, Team | S | Copy the AUTO-1 to AUTO-3 example and adjust the two lists with your lead |
+| SPC-6 | Add `specs/autonomy.md` with two lists (actions an agent takes without asking, actions that need a person) and the way to ask | Project, Team | S | Copy the AUTO-1 to AUTO-3 example and adjust the two lists with your lead |
 | SPC-7 | Apply the merge-alone test to every slice and name a size budget per pull request in the plan | Team | M | Take the current epic and check each story against the test |
 | SPC-8 | Turn mixed-source requirements into one cited list with conflicts as owner questions | Workspace, Team | M | Run the five-step method on the material from your last kickoff |
 | SPC-9 | Triage the tracker so every open issue carries exactly one mark with a cited rule, and verify with a script | Project, Team | L | Mark the ten newest issues by hand against `specs/autonomy.md` |

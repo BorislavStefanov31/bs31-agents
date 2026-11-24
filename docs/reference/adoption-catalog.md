@@ -195,7 +195,7 @@
 | SPC-3 | State acceptance criteria as observable outcomes with at least one must-not case, and move how-constraints to a `Constraint: ... because ...` line | Project, Team | S | Take one open story and classify each criterion as outcome or prescription |
 | SPC-4 | Give product and design rules ids in a `specs/` folder so briefs and triage can cite them | Project | M | Write five invariants in `specs/product.md` as `PROD-1` to `PROD-5` |
 | SPC-5 | Keep short decision records with a "revisit if" line, written by the agent after you decide | Project | S | Ask your agent to record the last architectural choice you made in `specs/decisions/0001-*.md` |
-| SPC-6 | Add `specs/autonomy.md` listing what an agent may do alone, what needs a person and how to ask | Project, Team | S | Copy the AUTO-1 to AUTO-3 example and adjust the two lists with your lead |
+| SPC-6 | Add `specs/autonomy.md` with two lists (actions an agent takes without asking, actions that need a person) and the way to ask | Project, Team | S | Copy the AUTO-1 to AUTO-3 example and adjust the two lists with your lead |
 | SPC-7 | Apply the merge-alone test to every slice and name a size budget per pull request in the plan | Team | M | Take the current epic and check each story against the test |
 | SPC-8 | Turn mixed-source requirements into one cited list with conflicts as owner questions | Workspace, Team | M | Run the five-step method on the material from your last kickoff |
 | SPC-9 | Triage the tracker so every open issue carries exactly one mark with a cited rule, and verify with a script | Project, Team | L | Mark the ten newest issues by hand against `specs/autonomy.md` |

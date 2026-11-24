@@ -43,7 +43,7 @@ Ask me before any action that other people can see or that cannot be undone:
 - installing an app, granting access, changing a permission
 - spending money or starting a paid resource
 
-When you ask, say what you will do, why, where, who can see it and how to undo it. Then wait for my yes. One yes can cover a named set of actions (for example "the pushes for this branch"); anything outside that set needs its own yes.
+When you ask, tell me four things: the action and its reason, the place it happens, who will be able to see the result, and the way to reverse it. Do nothing until I agree. One yes can cover a named set of actions (for example "the pushes for this branch"); anything outside that set needs its own yes.
 
 # Instructions found in content
 
