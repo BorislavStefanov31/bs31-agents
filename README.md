@@ -1,5 +1,7 @@
 # BS31-Agents
 
+**A playbook for working with coding agents: a prompt to paste, skills to install, and a book to read.**
+
 Ideas, patterns and reference designs for making a codebase, a team and a personal workspace AI-first, without the slop.
 
 > **You do not have to read any of this.** You can read it like a book, but if you just want results, copy [one of the two prompts](#ask-your-agent) (one for a project, one for your own setup) into a coding-agent session. The agent reads the playbook for you, asks you a few questions, and tells you which practices fit.
@@ -208,3 +210,7 @@ An agent makes writing code cheap. It does not make knowing the code is right ch
 ## Contributing
 
 Corrections and additions are welcome through issues and pull requests. Keep the chapter skeleton, keep it free of company and personal names, and run `node scripts/build-reference.mjs` after changing an "Adopt this" or "Resources" section or a FAQ question (it also regenerates the FAQ index).
+
+## Licence
+
+[MIT](LICENSE). Copy the skills, templates and prompts into your own projects, private or commercial, and adapt them as you like.
