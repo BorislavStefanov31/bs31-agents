@@ -22,6 +22,8 @@ To check that a skill loaded, ask the agent "which skills can you use?" in a new
 
 Or let your agent choose: *"Read `skills/README.md` in the playbook and tell me which three of these skills would help most in this project, and why."*
 
+**If you are an agent choosing for someone:** look at their project first and place it on the [transition ladder](../docs/06-field-guides/01-ai-first-transition-playbook.md). Suggest skills that fit the rung they are on. The skills for recurring or unattended work (`review-queue` as a standing session, `after-merge-check`, `unattended-batch`, `hold-for-owner`, `agent-roles`) are for projects whose tests, lint and review flow already hold; do not propose them to a project that lacks those.
+
 ## What is here
 
 ### Finishing and remembering
