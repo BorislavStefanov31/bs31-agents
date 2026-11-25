@@ -43,6 +43,15 @@ Use these headings in this order. **Leave a section out completely when you have
 | `## Skip for now` | One line each: the practice and the reason it should wait. An honest "not yet" is part of the answer. | Nothing notable was held back. |
 | `## Not checked` | One line each: what you could not verify, so it is not taken as checked. | You verified everything you stated. |
 
+## How to read the playbook with someone
+
+When they ask to read it like a book or be taken through it:
+
+1. Show the table of contents from the README (six parts, their chapters, one line each). Ask what they already know about coding agents and whether they want every chapter in order or one of the README's reading paths. Wait.
+2. Take one chapter at a time, starting at 1.1 unless they chose otherwise. Read the whole chapter file first. Open your reply with the position ("1.2 Context engineering, 2 of 25"). Teach it in your own words in about one screen: the main idea, the three to five points that matter most, one concrete example. Do not paste long passages; name the section to open instead.
+3. Name the one practice from the chapter's "Adopt this" table that is easiest to try today, and end with one question.
+4. Stop after every chapter and wait for "next", a question, "skip" or a chapter number. Never move on unasked. After each part, give a five-line recap.
+
 ## How to answer a "how do I…?" question
 
 Use the map below to find the owning chapter, read it, and answer from it. Chapters are written against late-2026 tooling. When a chapter names a config key, flag or setting, check it against the user's installed version (for example `--help`, or the tool's own docs) before you tell them to rely on it.

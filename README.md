@@ -4,7 +4,7 @@
 
 Ideas, patterns and reference designs for making a codebase, a team and a personal workspace AI-first, without the slop.
 
-> **You do not have to read any of this.** You can read it like a book, but if you just want results, copy [one of the two prompts](#ask-your-agent) (one for a project, one for your own setup) into a coding-agent session. The agent reads the playbook for you, asks you a few questions, and tells you which practices fit.
+> **You do not have to read any of this.** You can read it like a book, but if you just want results, copy [one of the prompts](#ask-your-agent) (one for a project, one for your own setup, one for a guided read) into a coding-agent session. The agent reads the playbook for you, asks you a few questions, and tells you which practices fit.
 
 This repository is documentation, written to be used in two ways:
 
@@ -19,6 +19,7 @@ It is a collection of ideas, patterns and reference designs: how to set up a wor
 |---|---|
 | Get advice for a project in five minutes | [Ask your agent: project audit](#example-prompt-a-project) |
 | Get advice for your own machine and habits | [Ask your agent: workspace audit](#example-prompt-a-personal-workspace) |
+| Read it chapter by chapter with your agent as the guide | [Ask your agent: read it like a book](#example-prompt-read-it-like-a-book) |
 | Introduce agents to an existing team without breaking things | [The AI-first transition playbook](docs/06-field-guides/01-ai-first-transition-playbook.md) |
 | See every practice at a glance | [Adoption catalogue](docs/reference/adoption-catalog.md) |
 | Run agents while your laptop is closed | [Blueprint: always-on remote setup](docs/06-field-guides/02-always-on-remote-setup-blueprint.md) |
@@ -99,6 +100,32 @@ and send nothing to any external service.
 
 Good follow-ups once you have the answer: *"Apply practice `<ID>` only. Show the diff first, and tell me how to verify it and how to undo it."*
 
+### Example prompt: read it like a book
+
+For when you want to go through the playbook from the first chapter, with your agent as the guide. It shows you the table of contents, asks what you already know, then teaches one chapter at a time and waits for you after each. Short form (full version in [`prompts/read-the-playbook.md`](prompts/read-the-playbook.md)):
+
+```text
+I want to read the BS31-Agents playbook with you like a book, starting at the
+beginning. The playbook is at
+https://github.com/BorislavStefanov31/bs31-agents
+If it is not cloned on this machine, clone it into a temporary folder.
+
+1. Show me the table of contents from the README: the six parts and their
+   chapters, one line each. Ask how much I already know about coding agents and
+   whether I want every chapter in order or one of the README's reading paths.
+   Wait for my answer, then start with chapter 1.1 unless I chose otherwise.
+2. For each chapter: read the whole file first. Start your reply with where we
+   are ("1.2 Context engineering, 2 of 25"). Teach it in your own words in
+   about one screen: the main idea, the three to five points that matter most,
+   and one concrete example. Name the one practice from its "Adopt this" table
+   that is easiest to try today. End with one question for me.
+3. Stop after every chapter and wait. I will say "next", ask questions, say
+   "skip" or name a chapter. Never move on by yourself. After each part, give
+   a five-line recap.
+
+Reading only: change no files (the temporary clone is the one exception).
+```
+
 ## What is in the playbook
 
 ### Part 1: Foundations
@@ -178,7 +205,7 @@ Where the ideas meet practice.
 | [Resources](docs/reference/resources.md) | Every external link the chapters recommend. |
 | [`skills/`](skills/) | Nineteen ready-to-use agent skills, most with a small checking script: finishing on a check, delegating, proving a change works, running unattended, and more. |
 | [`templates/`](templates/) | Starter files: instruction file, rule, skill, review skills, story and plan templates, hooks, remote-setup units. |
-| [`prompts/`](prompts/) | The two audit prompts in full, with follow-ups. |
+| [`prompts/`](prompts/) | The two audit prompts and the guided-reading prompt in full, with follow-ups. |
 
 ## Suggested reading paths
 
