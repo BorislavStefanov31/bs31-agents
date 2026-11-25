@@ -211,7 +211,7 @@ A meta-skill helps a team stay consistent: one skill that holds your rules for f
 
 ## Worked examples: the skills in this repository
 
-The [`skills/`](../../skills/README.md) folder holds nineteen skills written to the rules in this chapter. You can install them, and you can read them as examples. Each row names the point from this chapter that the skill shows best.
+The [`skills/`](../../skills/README.md) folder holds twenty-one skills written to the rules in this chapter. You can install them, and you can read them as examples. Each row names the point from this chapter that the skill shows best.
 
 | What to look at | Skill | Why it is a good example |
 |---|---|---|
@@ -225,7 +225,7 @@ The [`skills/`](../../skills/README.md) folder holds nineteen skills written to 
 | A pair split by moment | [`delegate-brief`](../../skills/delegate-brief/SKILL.md), [`merge-results`](../../skills/merge-results/SKILL.md) | One applies before work goes out, the other when results come back. Two triggers, two skills. |
 | Stating what a script does not protect against | [`secret-scope`](../../skills/secret-scope/SKILL.md), [`link-check`](../../skills/link-check/SKILL.md) | A small script is honest about its limits in the `SKILL.md`. |
 
-All nineteen keep the body near 600 words and use only `name` and `description` in the frontmatter. The [skills index](../../skills/README.md) lists every one with the situation it applies to and how to install it.
+All of them keep the body near 600 words and use only `name` and `description` in the frontmatter. The [skills index](../../skills/README.md) lists every one with the situation it applies to and how to install it.
 
 ## Common mistakes
 

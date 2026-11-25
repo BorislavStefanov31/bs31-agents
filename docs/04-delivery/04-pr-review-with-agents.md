@@ -246,7 +246,7 @@ Review does not have to wait for a person to start it. An agent on an always-on 
 - **Only the reviewer closes its own threads**, so an author's agent cannot declare itself done.
 - **A person is told only when a decision is needed** or something is broken, not every time a review finishes.
 
-The [always-on remote setup blueprint](../06-field-guides/02-always-on-remote-setup-blueprint.md) covers where such an agent can run.
+The [always-on remote setup blueprint](../06-field-guides/02-always-on-remote-setup-blueprint.md) covers where such an agent can run. Two ready-made skills cover the routine itself: [`review-queue`](../../skills/review-queue/SKILL.md) for one bounded pass over the open pull requests, and [`after-merge-check`](../../skills/after-merge-check/SKILL.md) for verifying what merged.
 
 ## Measure review
 

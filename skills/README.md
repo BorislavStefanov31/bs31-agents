@@ -1,6 +1,6 @@
 # Skills
 
-Nineteen ready-to-use agent skills. Each is a folder with a `SKILL.md` that tells a coding agent what to do in one specific situation, and most ship a small script that checks the part an agent should not be trusted to judge by itself.
+Twenty-one ready-to-use agent skills. Each is a folder with a `SKILL.md` that tells a coding agent what to do in one specific situation, and most ship a small script that checks the part an agent should not be trusted to judge by itself.
 
 They follow the Agent Skills folder format, so they work in Claude Code, Codex, Cursor and other harnesses that load a `SKILL.md`. You do not call a skill by hand: its `description` says when it applies, and the agent loads it when your request matches.
 
@@ -67,6 +67,13 @@ Or let your agent choose: *"Read `skills/README.md` in the playbook and tell me 
 | [`secret-scope`](secret-scope/SKILL.md) | A request carries a key, token, password or cookie. | Sends the request only if every hop, redirects included, is on that secret's host list. |
 | [`hold-for-owner`](hold-for-owner/SKILL.md) | An item needs a decision that is not the agent's to make. | Stores the held item, records the owner's yes or no, completes it once. |
 
+### Keeping review and verification moving
+
+| Skill | Use it when | Script |
+|---|---|---|
+| [`review-queue`](review-queue/SKILL.md) | You want one bounded pass over the open pull requests: what waits on you, what needs a first review, what is ready to merge. Also for a recurring or always-on session that keeps review moving. | Sorts pull requests into groups from `gh` data, and holds a lock so two passes never overlap. |
+| [`after-merge-check`](after-merge-check/SKILL.md) | Merged work needs checking in the shared environment against what it was supposed to do, with a recorded verdict. | A ledger of which merges are still unchecked and what verdict each got. |
+
 ### Setting up
 
 | Skill | Use it when | Script |
@@ -96,6 +103,8 @@ Three of them are designed to work together: `unattended-batch` sends credential
 | `tool-contract`, `read-the-contract` | [Tools and MCP](../docs/02-workspace/04-tools-and-mcp.md) |
 | `secret-scope`, `hold-for-owner` | [Hooks, guardrails and security](../docs/02-workspace/05-hooks-guardrails-and-security.md) |
 | `unattended-batch` | [Autonomous systems](../docs/05-autonomy/01-autonomous-systems.md) |
+| `review-queue` | [PR review with agents](../docs/04-delivery/04-pr-review-with-agents.md) |
+| `after-merge-check` | [Verification and quality gates](../docs/04-delivery/03-verification-and-quality-gates.md) |
 | `latest-check` | [How LLMs work](../docs/01-foundations/01-how-llms-work.md) (the knowledge cutoff) |
 | `shorten-safely` | [Verification and quality gates](../docs/04-delivery/03-verification-and-quality-gates.md) (a deterministic check instead of the agent's own judgment) |
 | `repo-setup` | [Instruction files and rules](../docs/02-workspace/01-instruction-files-and-rules.md) |

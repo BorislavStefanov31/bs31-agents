@@ -203,7 +203,7 @@ Where the ideas meet practice.
 | [Adoption catalogue](docs/reference/adoption-catalog.md) | Every practice from every chapter in one table, with effort and first step. |
 | [Glossary](docs/reference/glossary.md) | The vocabulary, one line each. |
 | [Resources](docs/reference/resources.md) | Every external link the chapters recommend. |
-| [`skills/`](skills/) | Nineteen ready-to-use agent skills, most with a small checking script: finishing on a check, delegating, proving a change works, running unattended, and more. |
+| [`skills/`](skills/) | Twenty-one ready-to-use agent skills, most with a small checking script: finishing on a check, delegating, keeping the review queue moving, proving a change works, running unattended, and more. |
 | [`templates/`](templates/) | Starter files: instruction file, rule, skill, review skills, story and plan templates, hooks, remote-setup units. |
 | [`prompts/`](prompts/) | The two audit prompts and the guided-reading prompt in full, with follow-ups. |
 
