@@ -8,24 +8,40 @@ This repository is a playbook, not a codebase. Someone has pointed you at it and
    - For a project: instruction files (`AGENTS.md`, `CLAUDE.md`, `.cursor/rules`, `.github/copilot-instructions.md`), agent config folders (`.claude/`, `.agents/`, `.codex/`, `.pi/`), CI workflows, test and lint setup, hooks, PR template, docs and decision records, the size and shape of recent PRs (`git log`, `gh pr list` if available), and how many people commit.
    - For a personal workspace: user-level instruction and settings files (for example `~/.claude/CLAUDE.md`, `~/.claude/settings.json`), installed skills, plugins and MCP servers, shell helpers, how sessions are started, and whether anything runs unattended.
    - Never print secrets you come across. Name the file and the problem instead.
-2. **Ask before you advise.** Some things are in no file: the team, the goal, the pain, the limits. Say in a few lines what you found, then ask one round of at most seven questions and wait for the answers.
+2. **Ask before you advise.** Some things are in no file: the team, the goal, the pain, the limits. Say in a few lines what you found, then ask one round of at most six questions and wait for the answers.
    - Ask only what inspection could not answer. Never ask what a file already told you.
+   - Do not ask how much time they have. Every recommendation carries an effort label, and they choose.
    - Offer two to four concrete options per question where you can, and always accept a free-text answer. Use your harness's question tool if it has one; otherwise number the questions.
-   - For a project, cover: who commits and who uses agents; how agents are used today; what hurts most; how far they want to go in the next three months; areas, tools or budgets that are off limits; who confirms plans and approves shared setup; time available per week.
-   - For a personal workspace, cover: what they work on; what they want most; what annoys them in a typical session; how they check the agent's work; how much risk they accept; which harnesses, plans, spare machines and phone they have; time available.
+   - For a project, cover: who commits and who uses agents; how agents are used today; what hurts most; how far they want to go in the next three months; areas, tools or budgets that are off limits; who confirms plans and approves shared setup.
+   - For a personal workspace, cover: what they work on; what they want most; what annoys them in a typical session; how they check the agent's work; how much risk they accept; which harnesses, plans, spare machines and phone they have.
    - One short follow-up round is allowed if an answer changes which practices are relevant. Then stop asking.
    - If the user already gave this information in their message, do not ask for it again.
 3. **Read [`docs/reference/adoption-catalog.md`](docs/reference/adoption-catalog.md).** It lists every practice in the playbook in one table: ID, practice, where it applies, effort, first step, and the chapter that explains it.
 4. **Place them on the ladder.** [`docs/06-field-guides/01-ai-first-transition-playbook.md`](docs/06-field-guides/01-ai-first-transition-playbook.md) defines the rungs and what must be true before climbing each one. Recommend from the lowest rung that is not yet solid. Do not recommend autonomy to a project with no deterministic test gate. Practices that only add context and no output, such as tightening the instruction file or recording decisions (ADRs), are safe at any rung: when decisions are not written down, include that among your recommendations even if the gates come first.
 5. **Open only the chapters you need** for the practices you are about to recommend. Do not load the whole playbook into context.
-6. **Recommend at most five practices**, ordered by value for effort. For each one give:
+6. **Recommend at most five practices**, ordered by value for effort. Recommend what is worth doing, not what fits a time budget. Fewer than five is fine. Each one needs:
    - the catalogue ID and the practice,
    - the evidence that makes it relevant: a file, a pattern, a gap, or one of their answers,
-   - what it changes for them and what it costs,
-   - the first step, concrete to their repo (file path, command),
-   - the chapter link.
-7. **Say what to skip for now**, with one line of reason each. An honest "not yet" is part of the answer.
+   - its effort (S, M or L),
+   - the first step, concrete to their repo (file path, command).
+7. **Write the report in the layout below.**
 8. **Change nothing unless asked.** This is an audit. If they then ask you to apply a practice, do one practice at a time, show the diff, and say how to verify it and how to undo it.
+
+## Report layout
+
+Use these headings in this order. **Leave a section out completely when you have nothing real to put in it**: no "none", no filler, no section written only because the layout lists it. No introduction before the first heading and no summary after the last. Aim for about one and a half screens.
+
+| Heading | What goes in it | Leave out when |
+|---|---|---|
+| `## Verdict` | Two lines at most. For a project: the rung of the ladder and the single most important thing to do next. For a workspace: the setup in one sentence and the single most important change. | Never. |
+| `## Fix now` | Real security or data-loss risks only: a committed secret, a secret in a settings file, an unguarded destructive action, an agent that can push or read secrets freely. One line each: what, where (the file), what to do. Never print a secret's value. | You found no such risk. |
+| `## Where we are` (project) or `## My setup` (workspace) | Three to six bullets: what holds and what is missing or left at its default, each with its evidence (a file and line, a number you computed, or one of their answers). | Never. |
+| `## Recommended next` | A table of at most five rows, ordered by value for effort, with the columns: #, Practice (catalogue ID), Why here, Effort, First step. | Never, but it may have fewer than five rows. |
+| `## Details` | One block per table row, three lines at most, only for what the table cannot hold: what changes for them, how they will know it worked, the chapter to read. Do not repeat the table. | The table says everything. |
+| `## Habits` (workspace only) | Two short lists of at most three items: what works and should stay, what costs time. One example from their sessions per item. | You had no access to session history. |
+| `## Turn into a rule, skill, hook or script` (workspace only) | One line each for things they repeat by hand: what it is, which of the four it should become, and why that one. | You saw nothing repeated. |
+| `## Skip for now` | One line each: the practice and the reason it should wait. An honest "not yet" is part of the answer. | Nothing notable was held back. |
+| `## Not checked` | One line each: what you could not verify, so it is not taken as checked. | You verified everything you stated. |
 
 ## How to answer a "how do I…?" question
 

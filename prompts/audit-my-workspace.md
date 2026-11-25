@@ -37,7 +37,7 @@ Then ask me what you still need to know to give good advice. Rules for the
 questions:
 - Ask only what you could not determine from my files and sessions. Never ask
   me something they already answered.
-- One round of at most seven questions. Offer two to four concrete options for
+- One round of at most six questions. Offer two to four concrete options for
   each where that is possible, and always let me answer in my own words.
   If your harness has a tool for asking the user questions, use it; otherwise
   number the questions and wait.
@@ -51,29 +51,65 @@ questions:
   5. how much risk I accept: may the agent run commands without asking, and is
      there anything it must never touch;
   6. what I have available: which harnesses and plans, a spare machine or
-     server, a phone I would take notifications on;
-  7. how much time I am willing to spend on setup this month.
+     server, a phone I would take notifications on.
 - If my session history showed a pattern, ask me about it instead of assuming
   why I do it.
 - Stop and wait for my answers. If an answer changes which practices are
   relevant, you may ask one short follow-up round. No more than that.
 
-STEP 3 - Advise.
+STEP 3 - Report.
 Read the playbook's docs/reference/adoption-catalog.md, keeping the rows that
 apply to "Workspace", and
 docs/06-field-guides/03-working-habits-and-anti-patterns.md. Open only the
-chapters behind the practices you are about to recommend. Give me:
+chapters behind the practices you are about to recommend.
 
-A. My setup in five lines: what is configured, what is default, what is risky.
-B. At most five practices to adopt next, ordered by value for effort. For each:
-   catalogue ID and name; why it fits (cite the file, the session pattern or my
-   answer that makes it relevant); what changes for me day to day; effort
-   (S/M/L); the first step as an exact file or command; the chapter to read.
-C. Habits: up to three things I do that work and should keep, and up to three
-   that cost me time, each with one example from my sessions if you had access.
-D. Things I repeat by hand that should become a rule, a skill, a hook or a
-   script. Say which of the four, and why that one.
-E. What to skip for now, one line of reason each.
+Write the report in exactly this layout, with these headings in this order.
+Leave a section out completely when you have nothing real to put in it: no
+"none", no filler, no section written only because the layout lists it. No
+introduction before the first heading and no summary after the last.
+
+## Verdict
+Two lines at most: the state of my setup in one sentence, and the single most
+important thing to change.
+
+## Fix now
+Only for a real risk you found (a secret in a settings file or shell profile,
+a permission mode that lets an agent do anything unasked, no deny rules).
+One line each: what, where (the file), what to do.
+
+## My setup
+Three to five bullets: what is configured, what is left at its default, each
+with the file that shows it.
+
+## Recommended next
+A table of at most five rows, ordered by value for effort:
+| # | Practice (catalogue ID) | Why for me | Effort | First step |
+"Why for me" names the file, the session pattern or the answer that makes it
+relevant. "Effort" is S, M or L. "First step" is an exact file or command.
+
+## Details
+One block per table row, three lines at most, only for what the table cannot
+hold: what changes day to day, and the chapter to read.
+
+## Habits
+Two short lists, three items each at most: what I do that works and should
+keep, and what costs me time. Give one example from my sessions per item.
+Leave this section out if you had no access to my session history.
+
+## Turn into a rule, skill, hook or script
+One line each for things I repeat by hand: what it is, which of the four it
+should become, and why that one.
+
+## Skip for now
+One line each: the practice and the reason it should wait.
+
+## Not checked
+One line each: what you could not verify, so I do not take it as checked.
+
+Rules for the report: recommend what is worth doing, not what fits a time
+budget; the effort column lets me choose. Fewer than five rows is fine. Do not
+repeat in Details what the table already says. Keep the whole report to about
+one screen and a half.
 
 Rules for the whole session: change no files, run nothing that writes, install
 nothing (the one exception is cloning the playbook into a temporary folder), send nothing to any external service. If you could not check
@@ -104,6 +140,8 @@ If the agent asks things your files already answer, tell it to go back to step 1
 
 - **Look first, ask second.** Your configuration and session history say more about how you work than you can describe from memory, so the agent reads them before it asks anything.
 - **It asks about goals, not facts.** What you want, what annoys you and how much risk you accept are in no file. Those are the questions worth your time.
-- **One bounded round of questions.** Seven questions with options take two minutes. An open-ended interview does not get finished.
+- **One bounded round of questions.** Six questions with options take two minutes. An open-ended interview does not get finished.
+- **A fixed report layout.** The verdict comes first and anything risky second. Empty sections are left out, which stops an agent padding the report to match the layout.
+- **No question about how much time you have.** Every recommendation carries an effort label, so you choose what fits.
 - **Setup and habits are separate.** Most of the time lost with an agent is lost to habits; see [working habits and anti-patterns](../docs/06-field-guides/03-working-habits-and-anti-patterns.md).
-- **Section D asks for the right mechanism.** An instruction is advice the model may not follow; a hook or script always runs. Picking the mechanism is half of the work.
+- **One section asks for the right mechanism.** An instruction is advice the model may not follow; a hook or script always runs. Picking the mechanism is half of the work.

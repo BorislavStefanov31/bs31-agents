@@ -28,7 +28,7 @@ It is a collection of ideas, patterns and reference designs: how to set up a wor
 
 ## Ask your agent
 
-Open a session in **your** project (or anywhere, for a workspace audit) and paste one of the prompts below. There is nothing to fill in: the agent fetches the playbook, looks at your setup, then **asks you a short round of questions** about what it cannot find out by itself, and only then gives advice. Both audits are read-only: the agent changes nothing until you ask.
+Open a session in **your** project (or anywhere, for a workspace audit) and paste one of the prompts below. There is nothing to fill in: the agent fetches the playbook, looks at your setup, then **asks you a short round of questions** about what it cannot find out by itself, and only then gives a short, structured report: a verdict, anything urgent, a table of what to do next, and what to skip. Both audits are read-only: the agent changes nothing until you ask.
 
 ### Example prompt: a project
 
@@ -43,18 +43,20 @@ If it is not cloned on this machine, clone it into a temporary folder.
 1. Read the playbook's AGENTS.md and follow it. Inspect this repository
    read-only: instruction files, agent config, CI, tests, hooks, recent PRs.
 2. Do not advise yet. Tell me in a few lines what you found, then ask me up to
-   seven questions about what you could not find out yourself: the team and who
+   six questions about what you could not find out yourself: the team and who
    uses agents, what hurts most, how far we want to go, what is off limits, who
-   decides, how much time we have. Offer options where you can. Never ask what
-   a file already answered. Wait for my answers.
-3. Then tell me:
-   A. Which rung of the playbook's transition ladder we are on, with evidence.
-   B. At most five practices to adopt next, ordered by value for effort. For
-      each: catalogue ID, why it fits (cite the file or my answer), the effort,
-      the first step as a concrete file or command here, and how we will know
-      it worked.
-   C. What to skip for now, and why.
-   D. Anything risky you noticed (secrets, unguarded destructive actions).
+   decides. Offer options where you can. Never ask what a file already
+   answered. Wait for my answers.
+3. Then report in the layout the playbook's AGENTS.md defines:
+   - Verdict: the rung of the transition ladder we are on and the one most
+     important thing to do, in two lines.
+   - Fix now: any security risk you found (secrets, unguarded destructive actions).
+   - Where we are: what holds and what is missing, with evidence.
+   - Recommended next: a table of at most five practices with catalogue ID,
+     why here, effort and first step, then short details per row.
+   - Skip for now, and what you could not check.
+   Leave out any section that would be empty. Recommend what is worth doing,
+   not what fits a time budget.
 
 Change no files (cloning the playbook into a temporary folder is the one exception).
 If you could not check something, say so instead of guessing.
@@ -76,18 +78,20 @@ If it is not cloned on this machine, clone it into a temporary folder.
    anything scheduled or always-on. If my session history is on disk, sample
    the last 20 sessions for things I repeat or correct more than once.
 2. Do not advise yet. Tell me in a few lines what you found, then ask me up to
-   seven questions about what you could not find out yourself: what I work on,
+   six questions about what you could not find out yourself: what I work on,
    what I want most, what annoys me, how I check your work, how much risk I
-   accept, what devices and plans I have, how much time I will spend. Offer
-   options where you can. Never ask what a file already answered. Wait for my
-   answers.
-3. Then tell me:
-   A. My setup in five lines: what is configured, what is default, what is risky.
-   B. At most five practices to adopt next, with the first step for each.
-   C. Up to three habits that work and three that cost me time, with examples.
-   D. What I repeat by hand that should become a rule, a skill, a hook or a
-      script, and which of the four.
-   E. What to skip for now.
+   accept, what devices and plans I have. Offer options where you can. Never
+   ask what a file already answered. Wait for my answers.
+3. Then report in the layout the playbook's AGENTS.md defines:
+   - Verdict: my setup in one sentence and the one most important change.
+   - Fix now: any risk you found (a secret in a settings file, no deny rules).
+   - My setup: what is configured and what is default, with the file.
+   - Recommended next: a table of at most five practices with catalogue ID,
+     why for me, effort and first step, then short details per row.
+   - Habits that work and habits that cost me time, with examples.
+   - What I repeat by hand that should become a rule, a skill, a hook or a script.
+   - Skip for now, and what you could not check.
+   Leave out any section that would be empty.
 
 Change no files (cloning the playbook into a temporary folder is the one exception)
 and send nothing to any external service.

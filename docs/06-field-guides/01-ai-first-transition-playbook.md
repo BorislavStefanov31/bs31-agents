@@ -208,7 +208,7 @@ Stepping back is not failure. It is the cheapest correction available, and far c
 | ID | Practice | Applies to | Effort | First step |
 |---|---|---|---|---|
 | TRN-1 | Record a baseline before changing anything: median PR size, time to merge, follow-up-fix rate, top three review comments | Project, Team | S | Ask your agent to compute the four numbers from the last 30 merged PRs and save them to `docs/metrics/baseline.md` |
-| TRN-2 | Place the project on the ladder and agree the next single rung | Team | S | Run the [project audit prompt](../../prompts/audit-my-project.md) and bring section A to the next team meeting |
+| TRN-2 | Place the project on the ladder and agree the next single rung | Team | S | Run the [project audit prompt](../../prompts/audit-my-project.md) and bring its "Verdict" and "Where we are" sections to the next team meeting |
 | TRN-3 | Make the clean-clone build and test a single documented command | Project | S | Clone into a temp folder, follow the README literally, and fix the first step that fails |
 | TRN-4 | Name a lead who confirms plans and approves changes to shared instructions | Team | S | Write the name and the two responsibilities into the instruction file or a shared values file |
 | TRN-5 | Move every "must always happen" rule from prose to a hook or CI check | Project | M | List the rules in your instruction file that contain "always" or "never" and pick the one whose breach cost the most |
