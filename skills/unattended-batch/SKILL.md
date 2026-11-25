@@ -73,3 +73,7 @@ The runner does not sandbox the routine: its code gets a minimal environment but
 ## Not for
 
 A model iterating until a check passes, one-off actions, work where every item needs judgement, choosing a scheduler.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/unattended-batch/scripts/`, so the full form of a command is `node .claude/skills/unattended-batch/scripts/<file>.mjs ...`.

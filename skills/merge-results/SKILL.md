@@ -65,3 +65,7 @@ demo crash    | 2026-11-18 16:00    | America/Chicago | 00:14:32
 
 - Writing the handoff: `../delegate-brief/SKILL.md`.
 - Merging code changes, or summarising one document.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/merge-results/scripts/`, so the full form of a command is `node .claude/skills/merge-results/scripts/<file>.mjs ...`.

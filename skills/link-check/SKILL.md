@@ -71,3 +71,7 @@ Never write out a query string or fragment: they can carry access tokens.
 ## Not for
 
 Links that need the recipient's own account, private-network links, crawling or monitoring many links, or judging page content beyond the phrase.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/link-check/scripts/`, so the full form of a command is `node .claude/skills/link-check/scripts/<file>.mjs ...`.

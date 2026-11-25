@@ -1,6 +1,6 @@
 # The AI-first transition playbook
 
-> How to move an existing project, and the team around it, from "some of us use an agent sometimes" to a setup where agents do most of the building and much of the checking, without drowning in slop and regressions. The chapter gives a ladder of seven rungs, what must be true before you climb each one, and how to tell that you climbed too fast.
+> How to move an existing project, and the team around it, from "some of us use an agent sometimes" to a setup where agents do most of the building and much of the checking, without drowning in slop and regressions. The chapter gives a ladder of eight rungs (0 to 7), what must be true before you climb each one, and how to tell that you climbed too fast.
 
 **Read this when:**
 - You are about to introduce agents into a codebase that already has users, a team and a history.

@@ -68,3 +68,7 @@ Not tamper-proof: the store is ordinary files, the ledger is append-only by conv
 ## Not for
 
 Decisions inside your own remit, credential handling, deciding for the owner, reverting completed actions.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/hold-for-owner/scripts/`, so the full form of a command is `node .claude/skills/hold-for-owner/scripts/<file>.mjs ...`.

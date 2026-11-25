@@ -66,7 +66,7 @@ D. One thing that looks risky today (security, secrets, an unguarded
    destructive action), if you found any.
 
 Rules for the whole session: change no files, run nothing that writes, install
-nothing. If something I told you does not match what you see in the repository,
+nothing (the one exception is cloning the playbook into a temporary folder). If something I told you does not match what you see in the repository,
 say so. If you could not check something, say that instead of guessing.
 ```
 

@@ -62,3 +62,7 @@ Rules 6, 9 and 10 are covered only by wrong-call samples you list (a `..` path, 
 ## Not for
 
 Code no model calls, choosing which tools to offer, or picking a server framework or transport.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/tool-contract/scripts/`, so the full form of a command is `node .claude/skills/tool-contract/scripts/<file>.mjs ...`.

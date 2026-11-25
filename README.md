@@ -2,11 +2,11 @@
 
 Ideas, patterns and reference designs for making a codebase, a team and a personal workspace AI-first, without the slop.
 
-> **You do not have to read any of this.** You can read it like a book, but if you just want results, copy [the prompt](#ask-your-agent) into a coding-agent session in your project. The agent reads the playbook for you, asks you a few questions, and tells you which practices fit.
+> **You do not have to read any of this.** You can read it like a book, but if you just want results, copy [one of the two prompts](#ask-your-agent) (one for a project, one for your own setup) into a coding-agent session. The agent reads the playbook for you, asks you a few questions, and tells you which practices fit.
 
 This repository is documentation, written to be used in two ways:
 
-1. **Just use the prompt.** Paste it into your coding agent in *your* project or on *your* machine. There is nothing to clone or fill in. The repo is structured so an agent can answer well: an [`AGENTS.md`](AGENTS.md) that tells it how to audit before advising, and an [adoption catalogue](docs/reference/adoption-catalog.md) that lists every practice in one table.
+1. **Just use the prompt.** Paste it into your coding agent in *your* project or on *your* machine. There is nothing for you to clone or fill in; the agent fetches the playbook itself. The repo is structured so an agent can answer well: an [`AGENTS.md`](AGENTS.md) that tells it how to audit before advising, and an [adoption catalogue](docs/reference/adoption-catalog.md) that lists every practice in one table.
 2. **Read it like a book.** Six parts, from how models work to agents that run while you sleep. Each chapter stands on its own, so you can also open only the one you need.
 
 It is a collection of ideas, patterns and reference designs: how to set up a workspace around a coding agent, how a team can run delivery and review through agents, and how to keep sessions running on a VPS while your laptop is closed. It describes no particular company, project or machine. The practices are what matter.
@@ -15,8 +15,8 @@ It is a collection of ideas, patterns and reference designs: how to set up a wor
 
 | If you want to… | Go to |
 |---|---|
-| Get advice for a project in five minutes | [Ask your agent: project audit](#ask-your-agent) |
-| Get advice for your own machine and habits | [Ask your agent: workspace audit](#ask-your-agent) |
+| Get advice for a project in five minutes | [Ask your agent: project audit](#example-prompt-a-project) |
+| Get advice for your own machine and habits | [Ask your agent: workspace audit](#example-prompt-a-personal-workspace) |
 | Introduce agents to an existing team without breaking things | [The AI-first transition playbook](docs/06-field-guides/01-ai-first-transition-playbook.md) |
 | See every practice at a glance | [Adoption catalogue](docs/reference/adoption-catalog.md) |
 | Run agents while your laptop is closed | [Blueprint: always-on remote setup](docs/06-field-guides/02-always-on-remote-setup-blueprint.md) |
@@ -54,7 +54,8 @@ If it is not cloned on this machine, clone it into a temporary folder.
    C. What to skip for now, and why.
    D. Anything risky you noticed (secrets, unguarded destructive actions).
 
-Change no files. If you could not check something, say so instead of guessing.
+Change no files (cloning the playbook into a temporary folder is the one exception).
+If you could not check something, say so instead of guessing.
 ```
 
 ### Example prompt: a personal workspace
@@ -86,12 +87,13 @@ If it is not cloned on this machine, clone it into a temporary folder.
       script, and which of the four.
    E. What to skip for now.
 
-Change no files and send nothing to any external service.
+Change no files (cloning the playbook into a temporary folder is the one exception)
+and send nothing to any external service.
 ```
 
 Good follow-ups once you have the answer: *"Apply practice `<ID>` only. Show the diff first, and tell me how to verify it and how to undo it."*
 
-## What is in the book
+## What is in the playbook
 
 ### Part 1: Foundations
 
@@ -145,7 +147,7 @@ Agents that work without you watching.
 | # | Chapter | What it covers |
 |---|---|---|
 | 5.1 | [Autonomous systems](docs/05-autonomy/01-autonomous-systems.md) | Runtime, state, control, observation and recovery; raising autonomy one notch at a time. |
-| 5.2 | [Portable agent configuration](docs/05-autonomy/02-portable-agent-config.md) | Roles, prompts and knowledge as files that move between harnesses, machines and models. |
+| 5.2 | [Portable agent config](docs/05-autonomy/02-portable-agent-config.md) | Roles, prompts and knowledge as files that move between harnesses, machines and models. |
 | 5.3 | [Orchestrating agent teams](docs/05-autonomy/03-orchestrating-agent-teams.md) | Planner, worker, critic, integrator: coordination through files, parallelism without collisions, supervision. |
 | 5.4 | [Events, hooks and pipelines](docs/05-autonomy/04-events-hooks-and-pipelines.md) | Triggers, scheduled agents, pipelines with checks, and notifications that reach you when you are needed. |
 | 5.5 | [Self-improving systems](docs/05-autonomy/05-self-improving-systems.md) | Collecting feedback, evaluating changes to the setup, distilling corrections into rules, and governance. |
@@ -156,7 +158,7 @@ Where the ideas meet practice.
 
 | # | Chapter | What it covers |
 |---|---|---|
-| 6.1 | [The AI-first transition playbook](docs/06-field-guides/01-ai-first-transition-playbook.md) | A seven-rung ladder for moving an existing project, with exit checks and signs you climbed too fast. |
+| 6.1 | [The AI-first transition playbook](docs/06-field-guides/01-ai-first-transition-playbook.md) | A ladder of eight rungs (0 to 7) for moving an existing project, with exit checks and signs you climbed too fast. |
 | 6.2 | [Blueprint: always-on remote setup](docs/06-field-guides/02-always-on-remote-setup-blueprint.md) | Laptop, VPS and phone: sessions that keep running, notifications, secrets, and the weak points to check. |
 | 6.3 | [Working habits and anti-patterns](docs/06-field-guides/03-working-habits-and-anti-patterns.md) | The human side: habits that save time with an agent, and the ones that quietly cost it. |
 | 6.4 | [FAQ](docs/06-field-guides/04-faq.md) | Short answers to the questions developers actually ask, by topic. |
@@ -182,7 +184,7 @@ Where the ideas meet practice.
 
 ## How the chapters are built
 
-Every chapter has the same skeleton, so you and your agent always know where to look:
+Every chapter except the FAQ has the same skeleton, so you and your agent always know where to look:
 
 - **Read this when**: the situations the chapter is for.
 - **The body**: organised around what you are trying to do, with examples.
@@ -205,4 +207,4 @@ An agent makes writing code cheap. It does not make knowing the code is right ch
 
 ## Contributing
 
-Corrections and additions are welcome through issues and pull requests. Keep the chapter skeleton, keep it free of company and personal names, and run `node scripts/build-reference.mjs` after changing an "Adopt this" or "Resources" section.
+Corrections and additions are welcome through issues and pull requests. Keep the chapter skeleton, keep it free of company and personal names, and run `node scripts/build-reference.mjs` after changing an "Adopt this" or "Resources" section or a FAQ question (it also regenerates the FAQ index).

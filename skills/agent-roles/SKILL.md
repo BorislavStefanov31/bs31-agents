@@ -84,3 +84,7 @@ check reads only the root ignore file.
 ## Not for
 
 Delegating one job and verifying it, looping until a check passes, or coordinating roles.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/agent-roles/scripts/`, so the full form of a command is `node .claude/skills/agent-roles/scripts/<file>.mjs ...`.

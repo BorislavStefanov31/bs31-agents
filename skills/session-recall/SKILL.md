@@ -80,3 +80,7 @@ sessions folder and pass it with `--path`.
 
 Code search, version-control history, documentation, the current conversation, memory or notes files,
 or summarising, indexing and editing transcripts.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/session-recall/scripts/`, so the full form of a command is `node .claude/skills/session-recall/scripts/<file>.mjs ...`.

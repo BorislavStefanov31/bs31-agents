@@ -63,3 +63,7 @@ await page.mouse.click(x, y);
 ## Not for
 
 Products with no browser interface, unit tests, load or security testing, or fixing the findings.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/show-it-works/scripts/`, so the full form of a command is `node .claude/skills/show-it-works/scripts/<file>.mjs ...`.

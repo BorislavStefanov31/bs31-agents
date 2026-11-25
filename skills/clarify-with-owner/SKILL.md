@@ -70,3 +70,7 @@ Choosing the recipient, asking about a past action and classing entries honestly
 ## Not for
 
 Sorting requests, deciding whether to build, sending messages, updating the tracker, or judging whether a reply is true.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/clarify-with-owner/scripts/`, so the full form of a command is `node .claude/skills/clarify-with-owner/scripts/<file>.mjs ...`.

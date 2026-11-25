@@ -62,3 +62,7 @@ It cannot prove who wrote a sign-off, read the owners file or judge the options;
 ## Not for
 
 Changes that leave behaviour unchanged, implementing the chosen option, or proving who wrote a sign-off.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/decide-before-build/scripts/`, so the full form of a command is `node .claude/skills/decide-before-build/scripts/<file>.mjs ...`.

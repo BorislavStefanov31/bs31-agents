@@ -64,3 +64,7 @@ Left to you: the script reads served markup only, so forms built by JavaScript a
 ## Not for
 
 Requests without a body, authenticating to the service, or designing an interface of your own.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/read-the-contract/scripts/`, so the full form of a command is `node .claude/skills/read-the-contract/scripts/<file>.mjs ...`.

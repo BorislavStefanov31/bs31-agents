@@ -66,3 +66,7 @@ Left to you: sentences are compared as exact text, so a reworded sentence shows 
 ## Not for
 
 Improving style or message, summarising sources the person did not supply, or translation.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/shorten-safely/scripts/`, so the full form of a command is `node .claude/skills/shorten-safely/scripts/<file>.mjs ...`.

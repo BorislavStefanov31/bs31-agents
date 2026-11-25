@@ -75,3 +75,7 @@ Whether a source says what the entry claims, and whether you truly ran a command
 ## Not for
 
 Task lists, plans, preferences, chat summaries, credentials, or verifying that a source is correct.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/findings-log/scripts/`, so the full form of a command is `node .claude/skills/findings-log/scripts/<file>.mjs ...`.

@@ -9,11 +9,11 @@ They follow the Agent Skills folder format, so they work in Claude Code, Codex, 
 Copy the folders you want into your skills folder and start a new session.
 
 ```sh
-git clone https://github.com/BorislavStefanov31/bs31-agents.git
-# one project
-mkdir -p .claude/skills && cp -R bs31-agents/skills/done-when .claude/skills/
+git clone https://github.com/BorislavStefanov31/bs31-agents.git /tmp/bs31-agents
+# one project (run from that project's root)
+mkdir -p .claude/skills && cp -R /tmp/bs31-agents/skills/done-when .claude/skills/
 # every project on this machine
-mkdir -p ~/.claude/skills && cp -R bs31-agents/skills/done-when ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -R /tmp/bs31-agents/skills/done-when ~/.claude/skills/
 ```
 
 Other harnesses use other folders (`.agents/skills/`, `.cursor/skills/`, `~/.codex/skills/`). The [`repo-setup`](repo-setup/SKILL.md) skill covers sharing one skills folder across several harnesses.
@@ -77,8 +77,8 @@ Three of them are designed to work together: `unattended-batch` sends credential
 
 ## About the scripts
 
-- Node 18 or newer, no dependencies, one file each. Run any of them with `--help`.
-- Every script has a `--selftest` that runs built-in cases and exits 0 when they pass. Run it once after copying a skill.
+- Node 18 or newer, no dependencies, one file each. Each skill's `SKILL.md` writes its commands as `scripts/<file>.mjs`, relative to the skill's own folder. After installing into a project, the full form is, for example, `node .claude/skills/done-when/scripts/done-when.mjs --help`.
+- Every script has a `--selftest` that runs built-in cases and exits 0 when they pass. Run it once after copying a skill: `node .claude/skills/done-when/scripts/done-when.mjs --selftest`.
 - They are small on purpose. Each enforces one idea and says in its `SKILL.md` what it does **not** protect against. Read that section before you rely on one for anything that matters, especially `secret-scope`, `unattended-batch` and `hold-for-owner`.
 - Harness details (hook formats, launch flags, where transcripts are stored) were checked against late-2026 versions. Check them against yours.
 
@@ -90,10 +90,12 @@ Three of them are designed to work together: `unattended-batch` sends credential
 | `done-when`, `session-recall` | [The agent loop and its primitives](../docs/03-agents/01-agent-loop-and-primitives.md) |
 | `findings-log` | [Knowledge and memory](../docs/02-workspace/03-knowledge-and-memory.md) |
 | `delegate-brief`, `merge-results` | [Subagents and multi-agent work](../docs/03-agents/03-subagents-and-multi-agent.md) |
-| `agent-roles` | [Portable agent configuration](../docs/05-autonomy/02-portable-agent-config.md) |
+| `agent-roles` | [Portable agent config](../docs/05-autonomy/02-portable-agent-config.md) |
 | `decide-before-build`, `clarify-with-owner`, `plan-to-issues` | [Intent, specs and decomposition](../docs/04-delivery/01-intent-specs-and-decomposition.md), [The delivery loop](../docs/04-delivery/02-the-delivery-loop.md) |
 | `show-it-works`, `link-check` | [Verification and quality gates](../docs/04-delivery/03-verification-and-quality-gates.md) |
 | `tool-contract`, `read-the-contract` | [Tools and MCP](../docs/02-workspace/04-tools-and-mcp.md) |
 | `secret-scope`, `hold-for-owner` | [Hooks, guardrails and security](../docs/02-workspace/05-hooks-guardrails-and-security.md) |
 | `unattended-batch` | [Autonomous systems](../docs/05-autonomy/01-autonomous-systems.md) |
+| `latest-check` | [How LLMs work](../docs/01-foundations/01-how-llms-work.md) (the knowledge cutoff) |
+| `shorten-safely` | [Verification and quality gates](../docs/04-delivery/03-verification-and-quality-gates.md) (a deterministic check instead of the agent's own judgment) |
 | `repo-setup` | [Instruction files and rules](../docs/02-workspace/01-instruction-files-and-rules.md) |

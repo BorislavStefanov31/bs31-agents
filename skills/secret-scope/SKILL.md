@@ -68,3 +68,7 @@ Limits: the script does not resolve DNS, so a listed name pointing at an interna
 ## Not for
 
 Requests without credentials, creating, rotating or storing secrets, scanning code for leaked secrets, general network sandboxing.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/secret-scope/scripts/`, so the full form of a command is `node .claude/skills/secret-scope/scripts/<file>.mjs ...`.

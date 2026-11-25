@@ -58,7 +58,7 @@ npm test -- importer && npx tsc --noEmit
 
 ## The helper script
 
-Needs Node 18+. Run from the project root; see `--help`.
+Needs Node 18+. Run from the project root, with the full path to the script (see "Script paths" below); see `--help`.
 
 - `node scripts/done-when.mjs approve [--max N]`: owner only, in an interactive terminal.
 - `node scripts/done-when.mjs gate`: the stop hook. Exit 0 lets you stop, exit 2 sends you back with
@@ -84,3 +84,7 @@ snippet's deny rule covers the edit tool only; rules 3 and 7 cover the rest.
 ## Not for
 
 Timers and recurring prompts, batches with no model, sandboxing what the check runs, or test design.
+
+## Script paths
+
+`scripts/...` in this file means the `scripts/` folder of this skill, wherever the skill is installed. From a project root that is usually `.claude/skills/done-when/scripts/`, so the full form of a command is `node .claude/skills/done-when/scripts/<file>.mjs ...`.

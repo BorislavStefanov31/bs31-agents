@@ -70,5 +70,5 @@ Use the map below to find the owning chapter, read it, and answer from it. Chapt
 If you are asked to change the playbook itself:
 
 - Every chapter keeps the same skeleton: title, summary quote, "Read this when", body, "Common mistakes", "Adopt this" table (exact heading, five columns: ID, Practice, Applies to, Effort, First step), "Resources".
-- After changing any "Adopt this" or "Resources" section, run `node scripts/build-reference.mjs` to regenerate `docs/reference/adoption-catalog.md` and `docs/reference/resources.md`. Do not edit those two files by hand.
+- After changing any "Adopt this" or "Resources" section, or adding or renaming a FAQ question under `docs/06-field-guides/faq/`, run `node scripts/build-reference.mjs`. It regenerates `docs/reference/adoption-catalog.md`, `docs/reference/resources.md` and the FAQ index `docs/06-field-guides/04-faq.md`. Do not edit those three files by hand.
 - Keep it free of company, project and personal names. Examples use placeholders (`PROJ-123`, `my-server`, `OWNER/REPO`).

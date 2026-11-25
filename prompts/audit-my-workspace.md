@@ -76,7 +76,7 @@ D. Things I repeat by hand that should become a rule, a skill, a hook or a
 E. What to skip for now, one line of reason each.
 
 Rules for the whole session: change no files, run nothing that writes, install
-nothing, send nothing to any external service. If you could not check
+nothing (the one exception is cloning the playbook into a temporary folder), send nothing to any external service. If you could not check
 something, say so instead of guessing.
 ```
 
